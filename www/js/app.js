@@ -23,9 +23,11 @@ angular.module('starter', ['ionic','ngCordovaBeacon'])
   });
 })
 
-.controller("ExampleController", function($scope, $rootScope, $ionicPlatform, $cordovaBeacon, $ionicPopup) {
+.controller("ExampleController", function($scope, $rootScope, $ionicPlatform, $cordovaBeacon, $ionicPopup, $ionicModal) {
 
     $scope.beacons = {};
+
+    console.log(new Date())
 
     $ionicPlatform.ready(function() {
 
@@ -68,7 +70,7 @@ angular.module('starter', ['ionic','ngCordovaBeacon'])
                 postObject.outtime = area1TimeOut;
                 var req = {
                   method: 'POST',
-                  url: baseUrl + 'api/v1/area1',
+                  url: 'https://sheltered-reef-87652.herokuapp.com/api/v1/area1',
                   data: postObject
                 };
 
@@ -100,4 +102,22 @@ angular.module('starter', ['ionic','ngCordovaBeacon'])
         $cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("estimote", "74278BDA-B644-4520-8F0C-720EAF059935"));
 
     });
+
+        $ionicModal.fromTemplateUrl('modalin.html', function(modal) {
+          $scope.leadPersondModal = modal;
+        }, {
+          scope: $scope,
+          animation: 'slide-in-up'
+        });
+
+
+    $scope.showModalIn = function() {
+
+
+
+      $scope.leadPersondModal.show();
+
+    }
+
+
 });

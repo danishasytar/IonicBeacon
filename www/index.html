@@ -41,9 +41,55 @@
       </ion-header-bar>
 
       <ion-content ng-controller="ExampleController">
-          <div class="list">
-            <h3>HIIHIHIH</h3> 
-          </div>
+
+              <button class="button button-block button-positive" ng-click="showModalIn()">
+                Display In
+              </button>
+              <button class="button button-block button-positive" ng-click="">
+                Display Out
+              </button>
+
+                <script id="modalin.html" type="text/ng-template">
+                  <ion-content>
+                    <div class="black">
+                      <div class="row" style="height:20px;"></div>
+
+                      <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                          <div class="square-round"></div>
+                        </div>
+                        <div class="col"></div>
+                      </div>
+                      <div class="row" style="height:30px;"></div>
+
+                      <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                          <div class="squarewhite">
+                            <center><h3>Counter L1</h3></center>
+                          </div>
+                        </div>
+                        <div class="col"></div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <button class="button button-block button-masblue" style="width: 300px !important;"ng-click="">
+                               OK
+                            </button>
+                        </div>
+                        <div class="col"></div>
+                      </div>
+
+                    </div>
+
+
+                  </ion-content> 
+
+                </script> 
+
       </ion-content> 
 
 
